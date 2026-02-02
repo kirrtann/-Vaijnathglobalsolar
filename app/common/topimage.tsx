@@ -11,7 +11,7 @@ const IMage = ({
 }: IMageProps) => {
   return (
     <div>
-      <div className="bg-cover bg-center bg-no-repeat bg-[url(/asset/home.jpg)] sm:mt-24 mt-[20] flex justify-center items-center sm:pb-5 max-h-[500px] min-h-[400px] sm:h-[400px] relative overflow-hidden">
+      <div className="bg-cover bg-center bg-no-repeat bg-[url(/asset/photovoltaic-2138992_1280.jpg)] sm:mt-24 mt-[20] flex justify-center items-center sm:pb-5 max-h-[500px] min-h-[400px] sm:h-[400px] relative overflow-hidden">
         {/* Overlay to ensure text readability */}
         <div className="absolute inset-0 bg-black/40"></div>
 

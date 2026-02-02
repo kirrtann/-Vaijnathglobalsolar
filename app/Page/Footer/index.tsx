@@ -162,27 +162,42 @@ export default function Footer() {
               <span className="absolute left-0 bottom-[-10px] w-12 h-1 bg-yellow-500 rounded-full"></span>
             </h3>
             <ul className="space-y-4">
-              {[
-                "About Us",
-                "Md's Desk",
-                "Benefits of Solar",
-                "Career",
-                "Blogs",
-                "Solar Calculator",
-              ].map((item) => (
-                <li key={item}>
-                  <Link
-                    href="#"
-                    className="text-slate-400 hover:text-yellow-500 transition-colors flex items-center gap-3 group"
-                  >
-                    <ChevronRight
-                      size={18}
-                      className="text-yellow-500 group-hover:translate-x-1 transition-transform"
-                    />
-                    {item}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="/about"
+                  className="text-slate-400 hover:text-yellow-500 transition-colors flex items-center gap-3 group"
+                >
+                  <ChevronRight
+                    size={18}
+                    className="text-yellow-500 group-hover:translate-x-1 transition-transform"
+                  />
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/solar-calculator"
+                  className="text-slate-400 hover:text-yellow-500 transition-colors flex items-center gap-3 group"
+                >
+                  <ChevronRight
+                    size={18}
+                    className="text-yellow-500 group-hover:translate-x-1 transition-transform"
+                  />
+                  Solar Calculator
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-slate-400 hover:text-yellow-500 transition-colors flex items-center gap-3 group"
+                >
+                  <ChevronRight
+                    size={18}
+                    className="text-yellow-500 group-hover:translate-x-1 transition-transform"
+                  />
+                  Contact Us
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

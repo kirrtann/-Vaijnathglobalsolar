@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function ContactPage() {
   return (
-    <div className="bg-white pb-20 mt-[-20px]">
+    <div className="bg-white pb-20 mt-[-98px]">
       <IMage header="Contact Us" headercss="text-4xl font-bold font-sans" />
 
       <div className="container mx-auto px-4 mt-20 max-w-7xl space-y-20">
@@ -147,16 +147,6 @@ export default function ContactPage() {
           {/* Right: Map */}
           <div className="h-full min-h-[400px] rounded-3xl overflow-hidden shadow-2xl relative">
             <iframe
-              src="https://www.google.com/maps/place/Siddhanath+Electrical%26solar/@23.0100362,71.1816989,17z"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="absolute inset-0 grayscale hover:grayscale-0 transition-all duration-700"
-            ></iframe>
-            <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.37400009677!2d71.18169891111134!3d23.01003617909569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395a2b8c3c26928f%3A0xf30da33d1d689f2d!2sSiddhanath%20Electrical%26solar!5e0!3m2!1sen!2sin!4v1770029432538!5m2!1sen!2sin"
               width="100%"
               height="100%"
@@ -164,7 +154,7 @@ export default function ContactPage() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="absolute inset-0  transition-all duration-700"
+              className="absolute inset-0 transition-all duration-700"
             ></iframe>
           </div>
         </div>
