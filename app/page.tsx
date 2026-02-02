@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ServiceCard } from "./common/ServicesCard";
+import ScrollReveal from "./common/ScrollReveal";
 
 export default function Home() {
   return (
@@ -74,73 +75,79 @@ export default function Home() {
       <section className="py-24 md:py-32 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-24 items-center">
-            <div className="relative group">
-              <div className="relative h-[500px] md:h-[650px] w-full rounded-3xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/asset/about1.jpg"
-                  alt="Solar Panels"
-                  fill
-                  className="object-cover transition-transform duration-1000 group-hover:scale-110"
-                />
+            <ScrollReveal direction="left" width="100%">
+              <div className="relative group">
+                <div className="relative h-[500px] md:h-[650px] w-full rounded-3xl overflow-hidden shadow-2xl">
+                  <Image
+                    src="/asset/about1.jpg"
+                    alt="Solar Panels"
+                    fill
+                    className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                  />
+                </div>
+                <div className="absolute -bottom-8 -right-8 bg-slate-900 p-10 rounded-3xl shadow-2xl hidden md:block">
+                  <p className="text-center font-black text-white">
+                    <span className="text-5xl block text-yellow-500 mb-1">
+                      10+
+                    </span>
+                    <span className="text-xs uppercase tracking-widest text-slate-400">
+                      Years of EPC Expertise
+                    </span>
+                  </p>
+                </div>
               </div>
-              <div className="absolute -bottom-8 -right-8 bg-slate-900 p-10 rounded-3xl shadow-2xl hidden md:block">
-                <p className="text-center font-black text-white">
-                  <span className="text-5xl block text-yellow-500 mb-1">
-                    10+
+            </ScrollReveal>
+
+            <ScrollReveal direction="right" width="100%" delay={0.2}>
+              <div className="mt-20 lg:mt-0 space-y-8">
+                <div className="space-y-4">
+                  <span className="text-yellow-600 font-black uppercase tracking-widest text-sm">
+                    About Vaijnath Solar
                   </span>
-                  <span className="text-xs uppercase tracking-widest text-slate-400">
-                    Years of EPC Expertise
-                  </span>
+                  <h2 className="text-5xl md:text-6xl font-black text-slate-900 leading-[1.1]">
+                    Building a <span className="text-yellow-500">Cleaner</span>{" "}
+                    Gujarat
+                  </h2>
+                </div>
+
+                <p className="text-slate-600 text-lg leading-relaxed font-medium">
+                  We don't just install panels; we engineer long-term energy
+                  assets. As a certified EPC provider, Vaijnath Global Solar
+                  handles everything from initial feasibility studies to grid
+                  synchronization and lifelong maintenance.
                 </p>
-              </div>
-            </div>
 
-            <div className="mt-20 lg:mt-0 space-y-8">
-              <div className="space-y-4">
-                <span className="text-yellow-600 font-black uppercase tracking-widest text-sm">
-                  About Vaijnath Solar
-                </span>
-                <h2 className="text-5xl md:text-6xl font-black text-slate-900 leading-[1.1]">
-                  Building a <span className="text-yellow-500">Cleaner</span>{" "}
-                  Gujarat
-                </h2>
-              </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {[
+                    { title: "Turnkey EPC", desc: "Consulting to Connection" },
+                    { title: "25yr Support", desc: "Long-term Security" },
+                    { title: "Tier-1 Tech", desc: "Highest Efficiency" },
+                    { title: "Custom ROI", desc: "Faster Payback" },
+                  ].map((item, i) => (
+                    <div
+                      key={i}
+                      className="flex flex-col gap-1 border-l-4 border-yellow-500 pl-4 py-1"
+                    >
+                      <h4 className="font-black text-slate-900">
+                        {item.title}
+                      </h4>
+                      <p className="text-sm text-slate-500 font-medium">
+                        {item.desc}
+                      </p>
+                    </div>
+                  ))}
+                </div>
 
-              <p className="text-slate-600 text-lg leading-relaxed font-medium">
-                We don't just install panels; we engineer long-term energy
-                assets. As a certified EPC provider, Vaijnath Global Solar
-                handles everything from initial feasibility studies to grid
-                synchronization and lifelong maintenance.
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {[
-                  { title: "Turnkey EPC", desc: "Consulting to Connection" },
-                  { title: "25yr Support", desc: "Long-term Security" },
-                  { title: "Tier-1 Tech", desc: "Highest Efficiency" },
-                  { title: "Custom ROI", desc: "Faster Payback" },
-                ].map((item, i) => (
-                  <div
-                    key={i}
-                    className="flex flex-col gap-1 border-l-4 border-yellow-500 pl-4 py-1"
+                <div className="pt-6">
+                  <Link
+                    href="/about"
+                    className="inline-flex items-center gap-3 text-slate-900 font-black border-b-2 border-yellow-500 pb-1 hover:text-yellow-600 transition-colors uppercase tracking-widest text-sm"
                   >
-                    <h4 className="font-black text-slate-900">{item.title}</h4>
-                    <p className="text-sm text-slate-500 font-medium">
-                      {item.desc}
-                    </p>
-                  </div>
-                ))}
+                    Learn Our Full Story
+                  </Link>
+                </div>
               </div>
-
-              <div className="pt-6">
-                <Link
-                  href="/about"
-                  className="inline-flex items-center gap-3 text-slate-900 font-black border-b-2 border-yellow-500 pb-1 hover:text-yellow-600 transition-colors uppercase tracking-widest text-sm"
-                >
-                  Learn Our Full Story
-                </Link>
-              </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -148,38 +155,46 @@ export default function Home() {
       {/* Services Section */}
       <section className="py-32 bg-slate-50 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mb-20 space-y-4">
-            <span className="text-yellow-600 font-black uppercase tracking-widest text-sm">
-              Specialized Services
-            </span>
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900">
-              Solar Solutions For Every Need
-            </h2>
-            <p className="text-slate-500 text-lg max-w-2xl font-medium">
-              Whether it's a small rooftop or a utility-scale solar farm, we
-              have the technical prowess to deliver maximum performance.
-            </p>
-          </div>
+          <ScrollReveal direction="up" width="100%">
+            <div className="max-w-3xl mb-20 space-y-4">
+              <span className="text-yellow-600 font-black uppercase tracking-widest text-sm">
+                Specialized Services
+              </span>
+              <h2 className="text-4xl md:text-5xl font-black text-slate-900">
+                Solar Solutions For Every Need
+              </h2>
+              <p className="text-slate-500 text-lg max-w-2xl font-medium">
+                Whether it's a small rooftop or a utility-scale solar farm, we
+                have the technical prowess to deliver maximum performance.
+              </p>
+            </div>
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <ServiceCard
-              title="Residential Solar"
-              subtitle="Home Energy"
-              backgroundImage="/asset/homesolor.jpg"
-              icon={<HomeIcon />}
-            />
-            <ServiceCard
-              title="Industrial & Commercial"
-              subtitle="Business Scale"
-              backgroundImage="/asset/about1.jpg"
-              icon={<BusinessIcon />}
-            />
-            <ServiceCard
-              title="Operation & Maintenance"
-              subtitle="Asset Management"
-              backgroundImage="/asset/calculate.jpg"
-              icon={<MaintenanceIcon />}
-            />
+            <ScrollReveal direction="up" width="100%" delay={0.1}>
+              <ServiceCard
+                title="Residential Solar"
+                subtitle="Home Energy"
+                backgroundImage="/asset/homesolor.jpg"
+                icon={<HomeIcon />}
+              />
+            </ScrollReveal>
+            <ScrollReveal direction="up" width="100%" delay={0.2}>
+              <ServiceCard
+                title="Industrial & Commercial"
+                subtitle="Business Scale"
+                backgroundImage="/asset/about1.jpg"
+                icon={<BusinessIcon />}
+              />
+            </ScrollReveal>
+            <ScrollReveal direction="up" width="100%" delay={0.3}>
+              <ServiceCard
+                title="Operation & Maintenance"
+                subtitle="Asset Management"
+                backgroundImage="/asset/calculate.jpg"
+                icon={<MaintenanceIcon />}
+              />
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -187,12 +202,18 @@ export default function Home() {
       {/* Process Section */}
       <section className="py-32 bg-white">
         <div className="container mx-auto px-4 text-center mb-20">
-          <span className="text-yellow-600 font-black uppercase tracking-widest text-sm">
-            Our Workflow
-          </span>
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 mt-4">
-            The Way To Go Solar
-          </h2>
+          <ScrollReveal
+            direction="up"
+            width="100%"
+            className="mx-auto text-center"
+          >
+            <span className="text-yellow-600 font-black uppercase tracking-widest text-sm">
+              Our Workflow
+            </span>
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mt-4">
+              The Way To Go Solar
+            </h2>
+          </ScrollReveal>
         </div>
 
         <div className="container mx-auto px-4">
@@ -207,15 +228,17 @@ export default function Home() {
               { step: "04", title: "Installation", desc: "Swift execution" },
               { step: "05", title: "Commission", desc: "Grid connectivity" },
             ].map((p, i) => (
-              <div key={i} className="flex flex-col items-center group">
-                <div className="w-20 h-20 bg-white border-4 border-slate-50 flex items-center justify-center rounded-2xl shadow-lg group-hover:border-yellow-500 group-hover:bg-slate-900 group-hover:text-white transition-all duration-500 mb-6">
-                  <span className="text-2xl font-black">{p.step}</span>
+              <ScrollReveal key={i} direction="up" delay={i * 0.1} width="100%">
+                <div className="flex flex-col items-center group">
+                  <div className="w-20 h-20 bg-white border-4 border-slate-50 flex items-center justify-center rounded-2xl shadow-lg group-hover:border-yellow-500 group-hover:bg-slate-900 group-hover:text-white transition-all duration-500 mb-6">
+                    <span className="text-2xl font-black">{p.step}</span>
+                  </div>
+                  <h4 className="text-xl font-bold text-slate-900 mb-2">
+                    {p.title}
+                  </h4>
+                  <p className="text-slate-500 text-sm font-medium">{p.desc}</p>
                 </div>
-                <h4 className="text-xl font-bold text-slate-900 mb-2">
-                  {p.title}
-                </h4>
-                <p className="text-slate-500 text-sm font-medium">{p.desc}</p>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -234,40 +257,48 @@ export default function Home() {
         <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-500/10 rounded-full blur-[120px]"></div>
 
         <div className="relative z-10 container mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-8 tracking-tighter">
-            Investing in a{" "}
-            <span className="text-yellow-500 italic">Cleaner Tomorrow</span>
-          </h2>
-          <p className="text-slate-300 max-w-2xl mx-auto text-xl mb-12 font-medium">
-            Join 500+ happy customers in Gujarat who have switched to
-            sustainable, free energy. Start saving today.
-          </p>
-          <div className="flex flex-wrap justify-center gap-6">
-            <Link
-              href="/contact"
-              className="px-12 py-5 bg-white text-slate-900 font-black rounded-full hover:bg-yellow-500 hover:text-white transition-all transform hover:-translate-y-1 shadow-2xl"
-            >
-              Get Free Consultation
-            </Link>
-            <Link
-              href="/solar-calculator"
-              className="px-12 py-5 bg-slate-800 text-white font-black rounded-full hover:bg-slate-700 transition-all"
-            >
-              Try Calculator
-            </Link>
-          </div>
+          <ScrollReveal direction="up" width="100%">
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-8 tracking-tighter">
+              Investing in a{" "}
+              <span className="text-yellow-500 italic">Cleaner Tomorrow</span>
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal direction="up" width="100%" delay={0.2}>
+            <p className="text-slate-300 max-w-2xl mx-auto text-xl mb-12 font-medium">
+              Join 500+ happy customers in Gujarat who have switched to
+              sustainable, free energy. Start saving today.
+            </p>
+          </ScrollReveal>
+          <ScrollReveal direction="up" width="100%" delay={0.4}>
+            <div className="flex flex-wrap justify-center gap-6">
+              <Link
+                href="/contact"
+                className="px-12 py-5 bg-white text-slate-900 font-black rounded-full hover:bg-yellow-500 hover:text-white transition-all transform hover:-translate-y-1 shadow-2xl"
+              >
+                Get Free Consultation
+              </Link>
+              <Link
+                href="/solar-calculator"
+                className="px-12 py-5 bg-slate-800 text-white font-black rounded-full hover:bg-slate-700 transition-all"
+              >
+                Try Calculator
+              </Link>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Stats Counter */}
       <section className="py-20 bg-slate-50 border-t border-slate-100">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
-            <StatItem value="5000+" label="Panel Installs" />
-            <StatItem value="2.5MW" label="Total Capacity" />
-            <StatItem value="Gujarat" label="Service Area" />
-            <StatItem value="24/7" label="Support Reach" />
-          </div>
+          <ScrollReveal direction="up" width="100%">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+              <StatItem value="5000+" label="Panel Installs" />
+              <StatItem value="2.5MW" label="Total Capacity" />
+              <StatItem value="Gujarat" label="Service Area" />
+              <StatItem value="24/7" label="Support Reach" />
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
