@@ -61,14 +61,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30">
-          <span className="text-[10px] uppercase font-bold tracking-[0.3em]">
-            Scroll
-          </span>
-          <div className="w-[2px] h-12 bg-linear-to-b from-white/50 to-transparent"></div>
-        </div>
       </section>
 
       {/* About Section */}
