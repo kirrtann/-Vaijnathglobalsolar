@@ -1,5 +1,20 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+import { pageMetadata } from "../lib/metadata";
 import IMage from "../common/topimage";
+
+export const metadata: Metadata = {
+  title: pageMetadata.about.title,
+  description: pageMetadata.about.description,
+  keywords: [
+    "about solar company",
+    "solar company Gujarat",
+    "EPC provider",
+    "renewable energy",
+    "solar expertise",
+    "solar history",
+  ],
+};
 
 export default function AboutPage() {
   return (

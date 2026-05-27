@@ -1,7 +1,12 @@
 "use client";
+import type { Metadata } from "next";
 import IMage from "../common/topimage";
 import { MapPin, Phone, Mail } from "lucide-react";
 import Image from "next/image";
+
+// Export metadata - will be handled by parent layout for client components
+// For now, adding it here as a comment reference
+// export const metadata: Metadata = pageMetadata.contact;
 
 export default function ContactPage() {
   return (

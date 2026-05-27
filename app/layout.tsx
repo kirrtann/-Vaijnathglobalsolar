@@ -3,6 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./Page/Navbar/page";
 import Footer from "./Page/Footer";
+import { baseMetadata } from "./lib/metadata";
+import { JsonLd } from "./lib/seo-utils";
+import { organizationSchema, localBusinessSchema } from "./lib/structured-data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,10 +17,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Vaijnath Global",
-  description: "Vaijnath Global Solar",
-};
+export const metadata: Metadata = baseMetadata;
 
 export default function RootLayout({
   children,
@@ -26,6 +26,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Organization Schema */}
+        <JsonLd data={organizationSchema} />
+        {/* Local Business Schema */}
+        <JsonLd data={localBusinessSchema} />
+        {/* Google Site Verification - Replace with your verification code */}
+        <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
